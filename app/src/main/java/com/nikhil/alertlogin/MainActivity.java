@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
                 View v1 = getLayoutInflater().inflate(R.layout.activity_login, null);
 
-                l = findViewById(R.id.loginbtn);
-                email = findViewById(R.id.etEmail);
-                pass = findViewById(R.id.etPassword);
+                l = v1.findViewById(R.id.loginbtn);
+                email = v1.findViewById(R.id.etEmail);
+                pass = v1.findViewById(R.id.etPassword);
 
                 a1.setView(v1);
                 final AlertDialog dialog = a1.create();
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                   @Override
                     public void onClick(View v) {
 
-                        if(email.getText().toString().isEmpty() && pass.getText().toString().isEmpty()){
+                        if(!email.getText().toString().isEmpty() && !pass.getText().toString().isEmpty()){
                             Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(MainActivity.this , Main2Activity.class );
                             startActivity(i);
